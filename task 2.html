@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us Page</title>
+  <style>
+    body {
+      background: #fafbfc;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 32px 0 24px 0;
+      color: #222;
+      text-shadow: 2px 2px 0 #fff, 3px 3px 5px #bbb;
+      letter-spacing: 1px;
+    }
+    .contact-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #EDEDED;
+      border-radius: 0;
+      box-shadow: 0 4px 24px rgba(98, 68, 133, 0.08);
+      display: flex;
+      padding: 36px 32px;
+      gap: 32px;
+      align-items: center;
+    }
+    .contact-illustration {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-illustration img {
+      width: 400px;
+      max-width: 100%;
+    }
+    .contact-content {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-content h2 {
+      color: #2d217c;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      border: none;
+      border-bottom: 2px solid #bbb;
+      background: transparent;
+      padding: 10px 4px;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-bottom: 2px solid #2d217c;
+    }
+    .contact-form button {
+      margin-top: 10px;
+      background: #2d217c;
+      color: #fff;
+      border: none;
+      border-radius: 22px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #1a124b;
+    }
+    .contact-info {
+      margin-top: 10px;
+      color: #2d217c;
+      font-size: 1rem;
+    }
+    .contact-info b {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .socials {
+      margin-top: 18px;
+      display: flex;
+      gap: 16px;
+    }
+    .socials a {
+      color: #222;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: #2d217c;
+    }
+    @media (max-width: 700px) {
+      .contact-card {
+        flex-direction: column;
+        padding: 24px 10px;
+        gap: 18px;
+      }
+      .contact-illustration {
+        justify-content: flex-start;
+      }
+    }
+    .todo-container {
+      max-width: 500px;
+      margin: 32px auto 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(44, 33, 124, 0.08);
+      padding: 24px 20px;
+    }
+    .todo-container h2 {
+      margin-top: 0;
+      color: #2d217c;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .todo-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .todo-form input {
+      flex: 1;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      outline: none;
+    }
+    .todo-form button {
+      background: #2d217c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .todo-form button:hover {
+      background: #1a124b;
+    }
+    .todo-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .todo-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .todo-list li.done {
+      text-decoration: line-through;
+      color: #bbb;
+    }
+    .delete-btn {
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-left: 12px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.2s;
+    }
+    .delete-btn:hover {
+      background: #c0392b;
+    }
+  </style>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="header-title">Contact & Control Panel</div>
+  <div class="contact-card">
+    <div class="contact-illustration">
+      <img src="img.png" alt="Contact Illustration" />
+    </div>
+    <div class="contact-content">
+      <h2>Let's Connect</h2>
+      <form class="contact-form" id="contactForm" autocomplete="off">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="E mail" required>
+        <textarea id="message" rows="2" placeholder="Message" required></textarea>
+        <button type="submit">Contact Us</button>
+        <div id="formMsg" style="color:#d8000c;font-size:0.98em;"></div>
+      </form>
+      <div class="contact-info">
+        <b>Contact</b>
+           abcdefghh@green.com<br>
+        <b>Based in</b>
+           Hyderabad,<br>
+           INDIA.
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- To-Do List Container -->
+  <div class="todo-container">
+    <h2>To-Do List</h2>
+    <form id="todoForm" class="todo-form">
+      <input type="text" id="todoInput" placeholder="Add a new task..." required>
+      <button type="submit">Add</button>
+    </form>
+    <ul id="todoList" class="todo-list"></ul>
+  </div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msgDiv = document.getElementById('formMsg');
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      msgDiv.style.color = "#d8000c";
+      if (!name) {
+        msgDiv.textContent = "Please enter your name.";
+      } else if (!email) {
+        msgDiv.textContent = "Please enter your email.";
+      } else if (!emailPattern.test(email)) {
+        msgDiv.textContent = "Please enter a valid email address.";
+      } else if (!message) {
+        msgDiv.textContent = "Please enter your message.";
+      } else {
+        msgDiv.style.color = "green";
+        msgDiv.textContent = "Thank you! Your message has been sent.";
+        this.reset();
+        setTimeout(() => msgDiv.textContent = "", 2000);
+      }
+    });
+
+    // To-Do List Functionality
+    const todoForm = document.getElementById('todoForm');
+    const todoInput = document.getElementById('todoInput');
+    const todoList = document.getElementById('todoList');
+
+    todoForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const task = todoInput.value.trim();
+      if (task) {
+        const li = document.createElement('li');
+        li.textContent = task;
+
+        // Create delete button
+        const delBtn = document.createElement('button');
+        delBtn.textContent = 'Delete';
+        delBtn.className = 'delete-btn';
+        delBtn.type = 'button';
+        delBtn.onclick = function(event) {
+          event.stopPropagation();
+          li.remove();
+        };
+
+        li.appendChild(delBtn);
+
+        li.addEventListener('click', function(e) {
+          if (e.target !== delBtn) {
+            li.classList.toggle('done');
+          }
+        });
+
+        todoList.appendChild(li);
+        todoInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
